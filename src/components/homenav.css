@@ -1,0 +1,259 @@
+.logo {
+  background: #000;
+  color: white;
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  padding: 0;
+  padding-top: 0.7rem;
+  padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
+  filter: drop-shadow(0 0 1.5em #646cffaa);
+  justify-content: space-between;
+
+}
+.size-4 {
+  height: 2rem !important;
+}
+.logo h2 {
+  margin: 0;
+  color: white !important;
+  font-size: 1.1rem;
+  font-family: roboto;
+  margin-left: 0.6rem;
+  margin-top: 0.3rem;
+}
+.size-4 svg {
+  font-size: 1rem !important;
+  height: 1.2rem !important;
+  margin-top: 0.3rem;
+}
+.firstLogo {
+  display: flex;
+}
+.logoSecond{
+margin-right: 2rem;
+}
+.logoSecond button{
+    border: none;
+    background: #000;
+    border-radius: 5px;
+    border:1px solid black;
+     margin-left: 1rem;
+}
+
+.icon{
+    color: white;
+     margin-top: 0.2rem !important;
+
+}
+.icon:hover{
+    color:  #39E079;
+    cursor: pointer;
+  
+}
+
+.mainHome{
+  width: 1200px;
+
+  margin: auto;
+  margin-top: 7rem;
+}
+.con{
+  font-family: "poppins";
+  font-weight: 600;
+  font-size: 2rem;
+}
+.theory{
+  width: fit-content;
+  font-family: roboto condensed;
+  color: rgba(245, 245, 245, 0.842);
+}
+
+.theory span{
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #39E079;
+
+}
+.features{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 1100px;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.one{
+  width: 200px;
+  border: 1px solid #444343be;
+  background: #1e1e1e91;
+  border-radius: 15px;
+padding: 1.3rem;
+transition: 0.3s;
+}
+.one h3{  
+  font-family: poppins;  
+}
+.one p{
+  color: #C4C4C4;
+  font-family: roboto;
+}
+
+.icon_features{
+  font-size: 2rem !important;
+  color: white !important;
+}
+.one:hover{
+  box-shadow: 2px 2px 10px #646cffaa;
+cursor: pointer;
+background: #000;
+color: #39E079;
+}
+.mainLogo{
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 2;
+}
+.buttons{
+  text-align: center;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+}
+.buttons button{
+  display: block;
+  margin: auto;
+background: #1e1e1e91;
+  border: 1px solid #444343be;
+color: white;
+width: 500px;
+border-radius: 10px;
+margin-bottom: 2rem;
+padding: 1rem;
+font-size: 1.4rem;
+font-weight: 600;
+cursor: pointer;
+transition: 0.5s;
+}
+.buttons button:hover{
+  background: #39E079;
+  border: 1px solid #39E079;
+  color: black;
+}
+.home_link{
+  text-decoration: none;
+}
+@media screen and (max-width: 600px) {
+ .mainHome{
+  width: 300px;
+
+ }
+ .buttons button{
+  width:280px ;
+  font-size: 1rem;
+ }
+ .features{
+  width: fit-content;
+ }
+ .logoSecond button{
+margin-left: 0.4rem;
+
+padding: 0;
+ }
+ .icon{
+  font-size: 1rem !important;
+  margin-top: 0.5rem !important;
+ }
+ .logo h2{
+  font-size: 1rem;
+margin-top:0.5rem ;
+  margin-bottom: -1rem;
+  padding-bottom: -1rem !important;
+ }
+ .size-4 svg {
+  margin-top: 0.5em;
+ }
+ .navlogo{
+  padding-bottom: -1rem;
+  
+  }
+  .logo{
+      padding-bottom: -1rem;
+   padding: 0.5rem;
+   margin-top: -0.5rem;
+  }
+
+
+}
+.protoError{
+  color: #39E079;
+  margin-top: 10rem;
+  width: 1000px;
+  margin: auto;
+    margin-top: 10rem;
+    font-family: "roboto";
+}
+.home_link .btn{
+  display: block;
+margin: auto;
+margin-top: 4rem;
+background: #000;
+border:1px solid #646cffaa;
+border-radius: 10px;
+padding: 1rem;
+color: white;
+font-family: roboto;
+font-size: 1.2rem;
+}
+.btn:hover{
+  color: white;
+  background: #646cffaa;
+  cursor: pointer;
+}
+.Alert_fb{
+  position: relative;
+  width: 350px !important;
+  top: 12rem;
+
+  display: block;
+  margin: auto;
+}
+.col_er{
+position: relative;
+top: -4em;
+}
+
+/* Button styles */
+.button {
+  background-color: #007bff; /* Default color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button.loading {
+  background-color: #28a745; /* Green color when loading */
+  cursor: not-allowed;
+}
+
+/* Loader styles */
+.loader {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid white; /* White */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 1s linear infinite;
+}
+

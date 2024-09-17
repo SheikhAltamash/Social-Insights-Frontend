@@ -1,0 +1,359 @@
+.post_img{
+    width: 200px;
+    height: 200px;
+    margin: 1rem;
+
+
+}
+.main_div_post_fb{
+    margin-top: 6rem;
+    text-align: center;
+}
+.post_div{
+    width: fit-content; 
+    display: inline;   
+}
+.brief_post_div{
+    background: green;   
+}
+.post_div {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.post_img {
+    cursor: pointer;
+}
+
+.brief_post_div_visible {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.brief_post_img {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
+  margin-top: 2.5rem;
+}
+.close_post{
+    font-size: 2rem !important;
+}
+.close_btn {
+  display: block;
+  margin-top: 10px; 
+  border: none;
+  cursor: pointer;
+position: absolute;
+right: 0.5rem;
+top: 0.3rem;
+background: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* Blurred background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(10px); /* Apply the blur effect */
+}
+.download_btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.link_button_post{
+background: #3388ff;
+border: none;
+padding: 0.5rem;
+color: white;
+border-radius: 7px;
+margin: 1rem;
+}
+.a_link_post{
+    text-decoration: none;
+    color: white;
+    font-family: roboto;
+
+}
+.link_button_post:hover{
+background: #0044ff;
+cursor: pointer;
+}
+.img_post_overflow{
+    height: 500px;
+    overflow:auto;
+    margin-top: 2rem;
+}
+.img_post_overflow::-webkit-scrollbar {
+  width: 5px !important /* Width of the scrollbar */
+}
+.img_post_overflow::-webkit-scrollbar-track {
+  background: black; /* Background of the scrollbar track */
+  border-radius: 15px; /* Round the corners of the track */
+}
+.img_post_overflow::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar handle */
+  border-radius: 15px; /* Round the corners of the handle */
+}
+.img_post_overflow::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color on hover */
+}
+.img_post_overflow {
+  scrollbar-width:thin; /* Set scrollbar width to thin */
+  scrollbar-color: #646cff6a white; /* Color of the scrollbar handle and track */
+}
+.selected {
+  border: 3px solid #3388ff; /* Visual indicator */
+}
+.checkbox_container{
+    display: inline;
+  position: relative;
+  top: -12rem;
+  left: -3rem;
+  
+  width: fit-content;
+
+}
+.checkbox{  
+    margin-left: -0.7rem !important;
+    
+}
+.main_post_div{
+    padding-top: 2rem;
+}
+.download_all_btn{
+border: none;
+color: white;
+background-color:#3388ff;
+font-size: 1rem;
+border-radius: 10px;
+padding: 0.5rem;
+position: fixed;
+z-index: 1;
+top: 5rem;
+left: 2rem;
+cursor: pointer;
+
+}
+.download_all_btn:hover{
+    color: white;
+    background: #4CAF50;
+}
+@media screen and (max-width:600px) {
+    .post_img{
+        width: 100px;
+        height: 100px;
+        margin: 0.7rem;
+    }
+    .checkbox{
+      font-size: 1rem;
+      height: 0.2rem;
+      width: 0.5rem;
+    }.checkbox_container{
+        top: -6rem;
+        left: -1.7rem;
+    }
+   .brief_post_div_visible{
+    height: fit-content;
+   }
+   .img_post_overflow{
+height: fit-content;
+   }
+   .download_btn{
+    font-size: 0.8rem;
+   }
+   .link_button_post{
+    display: inline;
+   font-size: 0.5rem;
+   margin: 0rem;
+   margin-top: 0.5rem;
+   margin-left: 0.1rem;
+   margin-right: 0.1rem;
+   }
+   .a_link_post{
+    
+    display: inline;
+    width: fit-content !important;
+   }
+   .brief_post_img{
+    width: 300px;
+   }
+   .download_all_btn{
+    font-size: 0.6rem;
+    padding: 0.3rem;
+    border-radius: 5px;
+   }
+   .all_download{
+    left: 12rem;
+}
+
+}
+.download_btn{
+    border: none;
+    padding: 0.5rem;
+    
+}
+.all_download{
+    left: 20rem;
+}
+
+.idx_post{
+    position: absolute;
+    right: 1.5rem;
+}
+
+
+
+  .container {
+    --uib-size: 200px;
+    --uib-color: #39E079;
+    --uib-speed: 1.4s;
+    --uib-stroke: 5px;
+    --uib-bg-opacity: .1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--uib-stroke);
+    width: var(--uib-size);
+    border-radius: calc(var(--uib-stroke) / 2);
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    margin: auto;
+    margin-top: 5rem;
+    font-size: 2rem;
+  }
+
+  .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--uib-color);
+    opacity: var(--uib-bg-opacity);
+    transition: background-color 0.3s ease;
+  }
+
+  .container::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: calc(var(--uib-stroke) / 2);
+    animation: zoom var(--uib-speed) ease-in-out infinite;
+    transform: translateX(-100%);
+    background-color: var(--uib-color);
+    transition: background-color 0.3s ease;
+  }
+
+  @keyframes zoom {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+
+.options {
+  display: flex;
+
+  width: 700px;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.one_option {
+  cursor: pointer;
+  padding: 10px;
+  color: white; /* Default color */
+  text-align: center;
+}
+.one_option p {
+  margin: 0;
+  font-size: 1.3rem;
+  font-family: roboto;
+}
+
+.one_option .underline {
+  width: 100%;
+  height: 0;
+  border-bottom: none;
+}
+
+.one_option.active {
+  color: black;
+  background: #39E079;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.content {
+  margin-top: 20px;
+}
+
+
+.one_option.active + .content_posts {
+  display: block; /* Show only the active content */
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+    background: black; /* Track color */
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+    background-color: green; /* Thumb color */
+    border-radius: 10px; /* Rounded edges */
+    border: 3px solid black; /* Space around thumb to match track */
+    transform-origin: top; /* Thumb's top edge will be sticky */
+}
+
+/* When scrolling, increase thumb size while scrolling up and vice versa */
+::-webkit-scrollbar-thumb:vertical {
+    transition: height 0.2s ease;
+}
+
+/* Adding a hover effect to the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #32cd32; /* Lighter green on hover */}
+    /* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: green;
+    border-radius: 10px;
+    transform-origin: top;
+    height: var(--scrollbar-thumb-height, 30px); /* Default height is 30px */
+}
