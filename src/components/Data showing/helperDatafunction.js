@@ -11,7 +11,6 @@ const downloadPdfWithLinks = (imageUrl, links, idx) => {
 
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
-
       const aspectRatio = img.width / img.height;
       let imgWidth = pdfWidth - 40;
       let imgHeight = imgWidth / aspectRatio;
@@ -70,7 +69,7 @@ const downloadPdfWithLinks = (imageUrl, links, idx) => {
         );
       });
 
-      pdf.save(`post${idx}.pdf`);
+      pdf.save(`post${idx+1}.pdf`);
       resolve();
     };
 

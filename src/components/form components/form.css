@@ -99,14 +99,12 @@ background: green;
     text-decoration: none;
     color: white;
 }
-.form{
-    margin-top: 2rem;
-}
+
 .btn_close_ff{
     color: #39E079 !important;
     background: #000 !important;
-    border: 1px solid #39E079 !important
-    
+    border: 1px solid #39E079 !important;
+    display: none;
 }
 .top_form_fb{
     display: flex;
@@ -119,3 +117,19 @@ margin: auto;
     margin-right: 12px;
     margin-left: 12px;
 }
+.form{
+margin-top: 2rem !important;
+}
+.Alert_fb{
+    background: green;
+position: relative !important;
+height: fit-content;
+width: 100% !important;
+}
+.col_er{
+
+    position: absolute !important;
+    width: 100% !important;
+    top: -18rem !important;
+}
+

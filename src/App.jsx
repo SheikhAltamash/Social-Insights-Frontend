@@ -10,6 +10,7 @@ import { Xform } from './components/form components/Xform'
 import { InstaForm } from './components/form components/instaForm'
 import { FbData } from './components/Data showing/fbData'
 import { Whatsapp } from './components/form components/WhatsappForm.jsx'
+import {FBIndv} from "./components/Data showing/FBindv.jsx"
 function App() {
 const router = createBrowserRouter([
   {
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
     path: "/whatsappForm",
     element:<Whatsapp></Whatsapp> ,
   },
+  {
+    path: "/fbUsers",
+    element:<FBIndv></FBIndv>
+    
+  }
 ]);
 
   return (

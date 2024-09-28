@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import Collapse from "@mui/material/Collapse";
 import CloseIcon from "@mui/icons-material/Close";
 import axios from "axios";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Link } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
@@ -26,27 +27,28 @@ export const FacebookForm = () => {
   const [showbtn, setshowbtn] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(data);
-    setLoading(true); // Set loading to true to disable button
+    setLoading(true);
     try {
-      // Send the login request with username and password
-      const response = await axios.post("http://localhost:8080/fblogin", {
-        data,
-      });
+      const response = await axios.post(
+        "http://localhost:8080/facebook/fblogin",
+        {
+          data,
+        }
+      );
 
       if (
         response.status === 200 &&
-        (response.data.message === "Login successful" ||
-          response.data.message === "Already logged in")
+        (response.data.message === "Login successful !" ||
+          response.data.message === "Already logged in !")
       ) {
+        navigate("/fbData",{state:{case_no:data.case_no}});
         console.log("Login successful");
-        setLoading(false); // Reset loading state on success
-        navigate("/fbData"); // Navigate to fbData route if login is successful
+        setLoading(false);
       } else {
         console.log("Login failed with status: ", response.status);
         setError("Login failed. Please check your credentials and try again.");
-        setOpen(true); // Show error alert if login fails
-        setLoading(false); // Reset loading state on error
+        setOpen(true);
+        setLoading(false);
       }
     } catch (error) {
       if (error.response) {
@@ -59,8 +61,8 @@ export const FacebookForm = () => {
         console.error("Error setting up the login request:", error.message);
         setError("Login failed. Try Again");
       }
-      setOpen(true); // Show error alert if there is an exception
-      setLoading(false); // Reset loading state on error
+      setOpen(true);
+      setLoading(false);
     }
   };
   const togglePasswordVisibility = () => {
@@ -79,23 +81,27 @@ export const FacebookForm = () => {
   return (
     <div>
       <Navbar home={true} />
-
+      <button onClick={showbtnbox}>
+        <ArrowBackIcon></ArrowBackIcon>
+      </button>
       <div className="face_buttons">
         {!showbtn && (
-          <button>
-            <Link to={"/fbData"} className="face_buttons_link">
-              See All User Data
-            </Link>
-          </button>
+          <div>
+            <button>
+              <Link to={"/fbUsers"} className="face_buttons_link">
+                See All User Data
+              </Link>
+            </button>{" "}
+            <button
+              className={`${!showbtn ? "" : "btn_close_ff"}`}
+              onClick={() => {
+                showbtnbox();
+              }}
+            >
+              Add New User Data
+            </button>
+          </div>
         )}
-        <button
-          className={`${!showbtn ? "" : "btn_close_ff"}`}
-          onClick={() => {
-            showbtnbox();
-          }}
-        >
-          Add New User Data
-        </button>
       </div>
       <Box sx={{ width: "100%" }} className="Alert_fb">
         <Collapse in={open} className="col_er">
