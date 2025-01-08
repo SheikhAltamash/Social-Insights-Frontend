@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Navbar } from "../Navbar";
 import axios from "axios";
 import folderImg from "../../assets/folder.png";
@@ -8,7 +8,7 @@ export const FBIndv = () => {
   let [data, setData] = useState([{}]);
   let [loading, setLoading] = useState(false);
   let [searchData, setSearchData] = useState("");
-  let [chack, setCheck] = useState(false);
+  // let [chack, setCheck] = useState(false);
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get("http://localhost:8080/facebook/fbData");

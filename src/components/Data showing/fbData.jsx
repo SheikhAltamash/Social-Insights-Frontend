@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Navbar } from "../Navbar";
 import CloseIcon from "@mui/icons-material/Close";
 import axios from "axios";
-import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import "./Data.css";
 import Checkbox from "@mui/material/Checkbox";
 import {
@@ -45,10 +44,11 @@ export const FbData = () => {
     fetchData();
 
     const eventSource = new EventSource(
-      "http://localhost:8080/facebook/events"
+      "http://localhost:8080/facebook/events?caseNo=${case_no}"
     );
     eventSource.onmessage = (event) => {
       const newScreenshotData = JSON.parse(event.data);
+      console.log("New Screenshot URL:", newScreenshotData.url); 
       setData((prevData) => ({
         ...prevData,
         post: [...prevData.post, newScreenshotData],
@@ -165,8 +165,8 @@ export const FbData = () => {
 
             <div className="main_post_div">
               {loading ? (
-                <div class="container"></div>
-              ) : (
+                <div className="container"></div>
+              ) : data.post && data.post.length > 0 ? (
                 data.post.map((post, index) => (
                   <div key={index} className="post_div">
                     <img
@@ -245,7 +245,10 @@ export const FbData = () => {
                     )}
                   </div>
                 ))
-              )}
+              ) : (
+                <div className="container"></div> 
+              )
+              }
             </div>
           </div>
         )}

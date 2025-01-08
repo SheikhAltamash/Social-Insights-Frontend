@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Navbar } from "./Navbar";
 import "./homenav.css";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -9,19 +8,19 @@ import BlurOnOutlinedIcon from "@mui/icons-material/BlurOnOutlined";
 import ArrowDownwardOutlinedIcon from "@mui/icons-material/ArrowDownwardOutlined";
 import FitScreenOutlinedIcon from "@mui/icons-material/FitScreenOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
-  let [open, setopen] = useState();
 
   return (
     <div>
       <Navbar className="nav_home" color={"#646cffaa"}></Navbar>
       <div className="mainHome">
+       
         <h2 className="con">Connect Account</h2>
         <p className="theory">
           <span>Social Insights</span> is a prototype tool designed to fetch{" "}
-          <span>Facebook</span> posts in the form of high-quality screenshots.{" "}
+          <span>Facebook</span>, <span>Instagram</span>, <span>WhatsApp</span>  posts in the form of high-quality screenshots.{" "}
           <br /> This streamlined solution automates data retrieval from user
           profiles, making it easier to capture and analyze visual content.{" "}
           <br /> Currently, it supports fetching only posts, laying the

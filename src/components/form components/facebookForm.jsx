@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Navbar } from "../Navbar";
 import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
@@ -134,13 +134,14 @@ export const FacebookForm = () => {
             <div className="top_form_fb">
               <div>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Enter Case Number"
                   value={data.case_no}
                   required
                   onChange={(e) => {
                     handleInputChange(e, "case_no");
                   }}
+                  className="numberTypeInput"
                 />
               </div>
               <div>

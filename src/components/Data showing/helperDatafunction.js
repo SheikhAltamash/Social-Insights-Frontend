@@ -1,5 +1,4 @@
 import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
 const downloadPdfWithLinks = (imageUrl, links, idx) => {
   return new Promise((resolve, reject) => {
     const img = new Image();
