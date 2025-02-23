@@ -16,15 +16,20 @@ export const Home = () => {
     <div>
       <Navbar className="nav_home" color={"#646cffaa"}></Navbar>
       <div className="mainHome">
-       
         <h2 className="con">Connect Account</h2>
         <p className="theory">
-          <span>Social Insights</span> is a prototype tool designed to fetch{" "}
-          <span>Facebook</span>, <span>Instagram</span>, <span>WhatsApp</span>  posts in the form of high-quality screenshots.{" "}
-          <br /> This streamlined solution automates data retrieval from user
-          profiles, making it easier to capture and analyze visual content.{" "}
-          <br /> Currently, it supports fetching only posts, laying the
-          groundwork for future social media data extraction capabilities{" "}
+  
+            • A web application that parses social media feeds into structured
+            documents, allowing users to extract chats, posts, followers, and
+            account details.
+            <br />
+            • Uses Neural Networks for image classification and Natural Language
+            Toolkit for text analysis, employing OCR and transcription for
+            accurate detection of suspicious activity.
+            <br />• Ensures stealthy data retrieval by avoiding platform
+            honeypots and enables secure storage for easy retrieval during
+            investigations.
+        
         </p>
 
         <div className="features">

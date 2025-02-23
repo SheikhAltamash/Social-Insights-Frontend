@@ -33,7 +33,7 @@ export const Navbar = ({ home,color }) => {
               ></path>
             </svg>
           </div>
-          <h2>Social Insights</h2>
+          <h2>Social Forensics</h2>
         </div>
         <div className="logoSecond">
           {home && (
