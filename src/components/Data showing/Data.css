@@ -453,3 +453,9 @@
 .search_data_fb:focus {
   border: none !important;
 }
+.progress{
+  font-family: roboto;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  
+}

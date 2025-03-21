@@ -26,14 +26,17 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Link } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { useNavigate } from "react-router-dom";
+
 export const InstaForm = () => {
   const Data = {
+
     username: "",
     password: "",
     case_no: "",
     name: "",
   };
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [data, setData] = useState(Data);
   const [open, setOpen] = useState(true);
   const [error, setError] = useState("");
@@ -50,14 +53,14 @@ export const InstaForm = () => {
           data,
         }
       );
-
+      console.log(response.status);
       if (
         response.status === 200 &&
         (response.data.message === "Login successful !" ||
           response.data.message === "Already logged in !")
       ) {
-        // navigate("/InstaData", { state: { case_no: data.case_no } });
-        console.log("Login successful");
+        navigate("/InstaData", { state: { case_no: data.case_no,name:data.name } });
+        console.log("Login successful !");
         setLoading(false);
       } else {
         console.log("Login failed with status: ", response.status);
