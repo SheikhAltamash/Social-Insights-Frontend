@@ -57,7 +57,7 @@ export const FbData = () => {
     return () => {
       eventSource.close();
     };
-  }, [case_no]);
+  });
 
   const handleImageClick = (index) => {
     setVisiblePost(index);

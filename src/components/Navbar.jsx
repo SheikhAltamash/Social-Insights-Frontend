@@ -1,11 +1,10 @@
-import React from "react";
 import "./homenav.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import XIcon from "@mui/icons-material/X";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 export const Navbar = ({ home,color }) => {
   return (
     <div className="mainLogo">
