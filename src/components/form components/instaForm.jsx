@@ -39,6 +39,12 @@ export const InstaForm = () => {
       }
       if (data1.type === "crash") {
         setProgress(""); // Update progress in real-time
+        setshowbtn(false);
+        setLoading(false)
+        setOpen(true);
+        setData(Data);
+        setError("Login failed. Please try again !!!");
+        console.log("Server Crashed !!!")
       }
       if (data1.type === "done") {
         // Store in localStorage for persistence
@@ -59,6 +65,7 @@ export const InstaForm = () => {
     return () => socket.close();
   },[]);
   const handleSubmit = async (e) => {
+    setOpen(false);
     e.preventDefault();
     setLoading(true);
 
@@ -112,7 +119,7 @@ export const InstaForm = () => {
       ...data,
       [i]: e.target.value,
     });
-    console.log(data);
+    setOpen(false);
   };
   return (
     <div>
@@ -158,6 +165,7 @@ export const InstaForm = () => {
                 </IconButton>
               }
               sx={{ mb: 2 }}
+              className="alertError"
             >
               {error}
             </Alert>

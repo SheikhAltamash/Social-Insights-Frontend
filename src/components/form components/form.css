@@ -171,4 +171,27 @@ margin-left: 0.5rem;
     font-size: 1rem !important;
     width: 260px !important; 
 }
+.col_er{
+   
+    font-size: 0.5rem !important;
+    width: 100% !important;
+    margin: auto ;
+    text-align: center;
+    margin-top: -10rem;
+    padding: 0 !important;
+}
+.Alert_fb{
+    margin-top: -10rem;
+    font-size: 0.5rem !important;
+}
+.alertError{
+        font-size: 0.7rem !important;
+width:240px;
+
+
+
+
+    margin: auto;
+
+}
 }
