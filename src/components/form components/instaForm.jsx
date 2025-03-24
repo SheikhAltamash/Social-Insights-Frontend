@@ -1,17 +1,3 @@
-// export const InstaForm = () => {
-//   return (
-//     <div>
-//       <Navbar home={true} ></Navbar>
-//       <h1 className="protoError">
-//         This route is under development. Please check back later as we continue
-//         to enhance the functionality of our prototype.
-//       </h1>
-//       <Link className="home_link" to={"/"}>
-//         <button className='btn'>Back To Home</button>
-//       </Link>
-//     </div>
-//   );
-// }
 import { useEffect, useState } from "react";
 import { Navbar } from "../Navbar";
 // import { useNavigate } from "react-router-dom";
@@ -57,7 +43,6 @@ export const InstaForm = () => {
       if (data1.type === "done") {
         // Store in localStorage for persistence
         console.log("Current Data Before Navigation:", data);
-        // ✅ Use a function to get the latest state
         setData((prevData) => {
           navigate("/InstaData", {
             state: { ...prevData }, // Use latest data
