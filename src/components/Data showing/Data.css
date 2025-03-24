@@ -367,6 +367,46 @@
     font-size: 0.7rem;
     right: 1rem;
   }
+  .search_component {
+    width: 240px !important;
+    font-size: 0.8rem !important;
+    padding: 0.4rem !important;
+  }
+  .search_component input {
+    padding: 0rem;
+    font-size: 0.8rem;
+  }
+  .search_icon {
+    font-size: 0.5rem !important;
+    width: 1.5rem !important;
+    margin-left: 0.3rem;
+  }
+  .down_btns {
+    display: none;
+  }
+  .div_name_posts {
+    display: block;
+    position: static !important;
+    width: fit-content !important;
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+  }
+  .div_name_posts p,span{
+    font-size: 0.7rem !important;
+  }
+  .options{
+    margin-bottom: -2rem;
+  }
+  .post_div{
+    font-size: 0.7rem;
+    margin: 0.5rem !important;
+    padding: 0.7rem !important;
+  }
+}
+.main_post_div a{
+text-decoration: none;
+color: #32cd32;
 }
 .FbIndv_Data {
   margin-top: 5rem;
@@ -453,9 +493,31 @@
 .search_data_fb:focus {
   border: none !important;
 }
-.progress{
+.progress {
   font-family: roboto;
   margin-top: 1rem;
   font-size: 1.5rem;
-  
+  text-align: center;
+}
+.post_div {
+  background: rgb(23, 23, 23);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-family: roboto;
+}
+.post_div:hover {
+  box-shadow: 1px 1px 5px white;
+  color: white !important;
+  /* background:black; */
+}
+.post_div a {
+  text-decoration: none;
+  color: #32cd32;
+}
+.main_post_div {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
 }

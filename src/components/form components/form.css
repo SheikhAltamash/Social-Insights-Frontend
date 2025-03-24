@@ -139,3 +139,36 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
+
+@media screen and (max-width: 600px) {
+   .face_buttons button{
+   font-size: 0.8rem;
+}
+.form{
+    /* background: green; */
+    margin-top: -4rem !important;
+
+} 
+.form input{
+    width: 240px;
+    padding: 0.8rem;
+font-size: 0.7rem;
+}
+.form h2{
+    font-size: 1.2rem;
+}
+.top_form_fb{
+    display: block;
+}
+
+.but_i{
+
+font-size:1rem !important;
+margin-top: 0.3rem;
+margin-left: 0.5rem;
+}
+.button{
+    font-size: 1rem !important;
+    width: 260px !important; 
+}
+}

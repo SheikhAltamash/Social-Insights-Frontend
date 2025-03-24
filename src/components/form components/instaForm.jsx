@@ -1,4 +1,3 @@
-
 // export const InstaForm = () => {
 //   return (
 //     <div>
@@ -13,7 +12,7 @@
 //     </div>
 //   );
 // }
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navbar } from "../Navbar";
 // import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
@@ -30,7 +29,6 @@ import { useNavigate } from "react-router-dom";
 
 export const InstaForm = () => {
   const Data = {
-
     username: "",
     password: "",
     case_no: "",
@@ -43,9 +41,42 @@ export const InstaForm = () => {
   const [loading, setLoading] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [showbtn, setshowbtn] = useState(false);
+  const [progress, setProgress] = useState("");
+
+  useEffect(() => {
+    const socket = new WebSocket("ws://localhost:8081");
+    socket.onopen = () => console.log("WebSocket Connected");
+    socket.onmessage = (event) => {
+      const data1 = JSON.parse(event.data);
+      if (data1.type === "progress") {
+        setProgress(data1.status); // Update progress in real-time
+      }
+      if (data1.type === "crash") {
+        setProgress(""); // Update progress in real-time
+      }
+      if (data1.type === "done") {
+        // Store in localStorage for persistence
+        console.log("Current Data Before Navigation:", data);
+        // ✅ Use a function to get the latest state
+        setData((prevData) => {
+          navigate("/InstaData", {
+            state: { ...prevData }, // Use latest data
+          });
+          return prevData; // Preserve state
+        });
+        console.log("From page insta Form", data);
+      }
+    
+    };
+    socket.onclose = () => console.log("WebSocket Disconnected");
+    socket.onerror = (error) => console.error("WebSocket Error:", error);
+
+    return () => socket.close();
+  },[]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     try {
       const response = await axios.post(
         "http://localhost:8080/instagramlogin",
@@ -59,7 +90,8 @@ export const InstaForm = () => {
         (response.data.message === "Login successful !" ||
           response.data.message === "Already logged in !")
       ) {
-        navigate("/InstaData", { state: { case_no: data.case_no,name:data.name } });
+      
+
         console.log("Login successful !");
         setLoading(false);
       } else {
@@ -89,13 +121,13 @@ export const InstaForm = () => {
   const showbtnbox = () => {
     setshowbtn(!showbtn);
   };
- 
 
   const handleInputChange = (e, i) => {
     setData({
       ...data,
       [i]: e.target.value,
     });
+    console.log(data);
   };
   return (
     <div>
@@ -103,6 +135,7 @@ export const InstaForm = () => {
       <button onClick={showbtnbox}>
         <ArrowBackIcon></ArrowBackIcon>
       </button>
+
       <div className="face_buttons">
         {!showbtn && (
           <div>
@@ -146,7 +179,7 @@ export const InstaForm = () => {
           )}
         </Collapse>
       </Box>
-      {showbtn ? (
+      {showbtn && progress == "" ? (
         <div className="form">
           <h2>Enter Instagram credentials</h2>
           <form onSubmit={handleSubmit} className="facefor">
@@ -219,9 +252,14 @@ export const InstaForm = () => {
           </form>
         </div>
       ) : (
-        <p></p>
+        <div></div>
+      )}
+      {progress != "" && (
+        <div>
+          <div className="container"></div>
+          <div className="progress">{progress}</div>
+        </div>
       )}
     </div>
   );
 };
-

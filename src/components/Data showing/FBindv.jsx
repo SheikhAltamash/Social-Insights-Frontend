@@ -11,7 +11,7 @@ export const FBIndv = () => {
   // let [chack, setCheck] = useState(false);
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get("http://localhost:8080/facebook/fbData");
+      const response = await axios.get("http://localhost:8080/Instagram/AllData");
       setData(response.data);
     };
     getData();
@@ -64,7 +64,9 @@ export const FBIndv = () => {
                 key={i}
                 className="fbIndv_data_div"
                 onClick={() => {
-                  navigate("/fbData", { state: { case_no: user.case_no } });
+                  navigate("/InstaData", {
+                    state: { case_no: user.case_no, name: user.name },
+                  });
                 }}
               >
                 <img src={folderImg} className="folderImg" alt="folder" />
