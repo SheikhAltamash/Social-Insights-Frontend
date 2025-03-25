@@ -11,7 +11,9 @@ export const FBIndv = () => {
   // let [chack, setCheck] = useState(false);
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get("http://localhost:8080/Instagram/AllData");
+      const response = await axios.get(
+        "https://social-insights-backend.onrender.com/Instagram/AllData"
+      );
       setData(response.data);
     };
     getData();

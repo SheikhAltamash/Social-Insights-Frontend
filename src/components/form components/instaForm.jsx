@@ -30,7 +30,9 @@ export const InstaForm = () => {
   const [progress, setProgress] = useState("");
 
   useEffect(() => {
-    const socket = new WebSocket("ws://localhost:8081");
+    const socket = new WebSocket(
+      "ws://https://social-insights-backend.onrender.com/"
+    );
     socket.onopen = () => console.log("WebSocket Connected");
     socket.onmessage = (event) => {
       const data1 = JSON.parse(event.data);
@@ -71,7 +73,7 @@ export const InstaForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/instagramlogin",
+        "https://social-insights-backend.onrender.com/instagramlogin",
         {
           data,
         }

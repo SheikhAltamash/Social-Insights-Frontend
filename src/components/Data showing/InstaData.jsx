@@ -33,8 +33,8 @@ const receivedData = location.state || {
       console.log(receivedData)
       console.log("sending request to the server")
       const response = await axios.post(
-        `http://localhost:8080/InstaIndividual`,
-        { case_no:  receivedData.case_no||1244321  }
+        `https://social-insights-backend.onrender.com/InstaIndividual`,
+        { case_no: receivedData.case_no || 1244321 }
       );
       setData(response.data);
       console.log(response.data);
