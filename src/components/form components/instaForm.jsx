@@ -31,8 +31,11 @@ export const InstaForm = () => {
 
   useEffect(() => {
     const socket = new WebSocket(
-      "ws://https://social-insights-backend.onrender.com/"
+      "wss://social-insights-backend.onrender.com"
     );
+    // const socket = new WebSocket(
+    //   "ws://localhost:8080/"
+    // );
     socket.onopen = () => console.log("WebSocket Connected");
     socket.onmessage = (event) => {
       const data1 = JSON.parse(event.data);
@@ -42,11 +45,11 @@ export const InstaForm = () => {
       if (data1.type === "crash") {
         setProgress(""); // Update progress in real-time
         setshowbtn(false);
-        setLoading(false)
+        setLoading(false);
         setOpen(true);
         setData(Data);
         setError("Login failed. Please try again !!!");
-        console.log("Server Crashed !!!")
+        console.log("Server Crashed !!!");
       }
       if (data1.type === "done") {
         // Store in localStorage for persistence
@@ -59,7 +62,6 @@ export const InstaForm = () => {
         });
         console.log("From page insta Form", data);
       }
-    
     };
     socket.onclose = () => console.log("WebSocket Disconnected");
     socket.onerror = (error) => console.error("WebSocket Error:", error);
