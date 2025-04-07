@@ -1,136 +1,130 @@
-.form{
-    margin-top: 10rem;
+.form {
+  margin-top: 10rem;
 }
-.form h2{
-    margin: auto;
-    width: fit-content;
-    font-family: roboto;
-    font-size: 2rem;
-    
+.form h2 {
+  margin: auto;
+  width: fit-content;
+  font-family: roboto;
+  font-size: 2rem;
 }
-.facefor{
-    margin: auto;
-   margin-top: 2rem;
-    text-align: center;
-
+.facefor {
+  margin: auto;
+  margin-top: 2rem;
+  text-align: center;
 }
-.facefor input{
-    width: 400px;
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: white;
-    background: #000;
-    border: none;
-    border: 1px solid white;
-    border-radius: 10px;
-    padding:1rem;
-    outline: none; 
-
+.facefor input {
+  width: 400px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: white;
+  background: #000;
+  border: none;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 1rem;
+  outline: none;
 }
-.facefor input:focus{
-    border: 1px solid #39E079 !important;
+.facefor input:focus {
+  border: 1px solid #39e079 !important;
 }
-.facefor .button{
-    margin-top: 2rem;
-    width: 300px;
-    padding: 0.5rem;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    color: white;
-    background: #646cffaa;
-    cursor: pointer;
-    transition: 0.5s;
-    border: none;
-    font-weight: 600;
+.facefor .button {
+  margin-top: 2rem;
+  width: 300px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: white;
+  background: #646cffaa;
+  cursor: pointer;
+  transition: 0.5s;
+  border: none;
+  font-weight: 600;
 }
-.facefor .button:hover{
-background-color: #39E079;
+.facefor .button:hover {
+  background-color: #39e079;
 }
-.post_h1{
-    color: white !important;
-    margin-top: 10rem;
+.post_h1 {
+  color: white !important;
+  margin-top: 10rem;
 }
-.loading_p{
-    color: white;
-    margin-top: 10rem;
-   font-size: 2rem;
-   text-align: center;
-   font-family: poppins;
+.loading_p {
+  color: white;
+  margin-top: 10rem;
+  font-size: 2rem;
+  text-align: center;
+  font-family: poppins;
 }
 
-.but_i{
-color: white;
+.but_i {
+  color: white;
 
-position: absolute;
-left: -2.5rem;
-top: -0.3rem;
+  position: absolute;
+  left: -2.5rem;
+  top: -0.3rem;
 }
-.but_vis{
-background: green;
+.but_vis {
+  background: green;
 }
-.img_qr_ws{
-    margin: auto;
-    margin-top: 10rem;
-    width: 300px;
-    height: 300px;
-    display: block;
-}
-
-.face_buttons{
-    margin-top: 10rem;
-}
-.face_buttons button{
-    cursor: pointer;
-    display: block;
-    margin: auto;
-    margin-bottom: 2rem;
-    background: #39E079;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 0.5rem;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-family: poppins;
-    font-weight: 600;
-
-}
-.face_buttons_link{
-    text-decoration: none;
-    color: white;
+.img_qr_ws {
+  margin: auto;
+  margin-top: 10rem;
+  width: 300px;
+  height: 300px;
+  display: block;
 }
 
-.btn_close_ff{
-    color: #39E079 !important;
-    background: #000 !important;
-    border: 1px solid #39E079 !important;
-    display: none;
+.face_buttons {
+  margin-top: 10rem;
 }
-.top_form_fb{
-    display: flex;
-width: fit-content;
-margin: auto;
+.face_buttons button {
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-bottom: 2rem;
+  background: #39e079;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: poppins;
+  font-weight: 600;
+}
+.face_buttons_link {
+  text-decoration: none;
+  color: white;
+}
 
+.btn_close_ff {
+  color: #39e079 !important;
+  background: #000 !important;
+  border: 1px solid #39e079 !important;
+  display: none;
 }
-.top_form_fb input{
-    width: 170px;
-    margin-right: 12px;
-    margin-left: 12px;
+.top_form_fb {
+  display: flex;
+  width: fit-content;
+  margin: auto;
 }
-.form{
-margin-top: 2rem !important;
+.top_form_fb input {
+  width: 170px;
+  margin-right: 12px;
+  margin-left: 12px;
 }
-.Alert_fb{
-    background: green;
-position: relative !important;
-height: fit-content;
-width: 100% !important;
+.form {
+  margin-top: 2rem !important;
 }
-.col_er{
-
-    position: absolute !important;
-    width: 100% !important;
-    top: -18rem !important;
+.Alert_fb {
+  background: green;
+  position: relative !important;
+  height: fit-content;
+  width: 100% !important;
+}
+.col_er {
+  position: absolute !important;
+  width: 100% !important;
+  top: -18rem !important;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -139,59 +133,92 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
-
 @media screen and (max-width: 600px) {
-   .face_buttons button{
-   font-size: 0.8rem;
-}
-.form{
+  .face_buttons button {
+    font-size: 0.8rem;
+  }
+  .form {
     /* background: green; */
     margin-top: -4rem !important;
-
-} 
-.form input{
+  }
+  .form input {
     width: 240px;
     padding: 0.8rem;
-font-size: 0.7rem;
-}
-.form h2{
+    font-size: 0.7rem;
+  }
+  .form h2 {
     font-size: 1.2rem;
-}
-.top_form_fb{
+  }
+  .top_form_fb {
     display: block;
-}
+  }
 
-.but_i{
-
-font-size:1rem !important;
-margin-top: 0.3rem;
-margin-left: 0.5rem;
-}
-.button{
+  .but_i {
     font-size: 1rem !important;
-    width: 260px !important; 
-}
-.col_er{
-   
+    margin-top: 0.3rem;
+    margin-left: 0.5rem;
+  }
+  .button {
+    font-size: 1rem !important;
+    width: 260px !important;
+  }
+  .col_er {
     font-size: 0.5rem !important;
     width: 100% !important;
-    margin: auto ;
+    margin: auto;
     text-align: center;
     margin-top: -10rem;
     padding: 0 !important;
-}
-.Alert_fb{
+  }
+  .Alert_fb {
     margin-top: -10rem;
     font-size: 0.5rem !important;
-}
-.alertError{
-        font-size: 0.7rem !important;
-width:240px;
-
-
-
-
+  }
+  .alertError {
+    font-size: 0.7rem !important;
+    width: 240px;
     margin: auto;
+  }
+}
+
+.app-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8fafc;
+  font-family: sans-serif;
+}
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spinner {
+  width: 15px;
+  height: 15px;
+  border: 3px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+display: inline-block;  
+  margin-left: 1rem;
+
+  
+}
+.login_button p{
+display: inline;
+position: relative;
+top: -0.1rem;
 
 }
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
+

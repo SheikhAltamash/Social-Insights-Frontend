@@ -241,10 +241,11 @@ export const InstaForm = () => {
             </div>
             <button
               type="submit"
-              className={`button ${loading ? "loading" : ""}`}
+              className={`button ${loading ? "loading" : ""} login_button`}
               disabled={loading} // Disable button while loading
             >
-              {loading ? "Logging in..." : "Login"}
+              <p> {loading ? "Logging in..." : "Login"}</p>
+              {loading && <div className="spinner"></div>}
             </button>
           </form>
         </div>
