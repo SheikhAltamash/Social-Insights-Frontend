@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useNavigate } from "react-router-dom";
-
 export const InstaForm = () => {
   const Data = {
     username: "",
@@ -30,16 +29,16 @@ export const InstaForm = () => {
   const [progress, setProgress] = useState("");
 
   useEffect(() => {
-    const socket = new WebSocket(
-      "wss://social-insights-backend.onrender.com"
-    );
     // const socket = new WebSocket(
-    //   "ws://localhost:8080/"
+    //   "wss://social-insights-backend.onrender.com"
     // );
+    const socket = new WebSocket(
+      "ws://localhost:8080/"
+    );
     socket.onopen = () => console.log("WebSocket Connected");
     socket.onmessage = (event) => {
       const data1 = JSON.parse(event.data);
-      if (data1.type === "progress") {
+      if (data1.type === "progress" || data1.type === "chatStatus") {
         setProgress(data1.status); // Update progress in real-time
       }
       if (data1.type === "crash") {
@@ -75,7 +74,8 @@ export const InstaForm = () => {
 
     try {
       const response = await axios.post(
-        "https://social-insights-backend.onrender.com/instagramlogin",
+         "https://social-insights-backend.onrender.com/instagramlogin",
+        // "http://localhost:8080/instagramlogin",
         {
           data,
         }

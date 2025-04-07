@@ -521,3 +521,15 @@ color: #32cd32;
   width: 90%;
   margin: auto;
 }
+
+.loadingInstadata{
+  margin-top: 10rem !important;
+}
+.loadingInstadata h2{
+  font-family: "roboto";
+  text-align: center;
+
+margin-bottom: -4rem;}
+.loadingInstadata .container{
+  width: 350px;
+}

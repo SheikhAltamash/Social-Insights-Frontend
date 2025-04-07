@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Navbar } from "../Navbar";
 import axios from "axios";
 import folderImg from "../../assets/folder.png";
@@ -6,18 +6,29 @@ import { useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 export const FBIndv = () => {
   let [data, setData] = useState([{}]);
-  let [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState(true);
   let [searchData, setSearchData] = useState("");
   // let [chack, setCheck] = useState(false);
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get(
-        "https://social-insights-backend.onrender.com/Instagram/AllData"
-      );
-      setData(response.data);
+      try {
+        const response = await axios.get(
+          "https://social-insights-backend.onrender.com/Instagram/AllData"
+        );
+        setData(response.data);
+      } catch (e) {
+        console.log("Error", e.message);
+      } finally {
+        setLoading(false);
+      }
     };
+    // const getData = async () => {
+    //   const response = await axios.get(
+    //     "http://localhost:8080/Instagram/AllData"
+    //   );
+    //   setData(response.data);
+    // };
     getData();
-    setLoading(true);
   }, []);
 
   const truncateName = (name) => {
@@ -45,38 +56,42 @@ export const FBIndv = () => {
   return (
     <div>
       <Navbar></Navbar>
-      {loading && (
-        <div className="search_component">
-          <SearchIcon className="search_icon"></SearchIcon>
-          <input
-            type="text"
-            className="search_data_fb"
-            placeholder="Search by name or case number"
-            onChange={handleChange}
-          />
+      {!loading ? (
+        <div>
+          <div className="search_component">
+            <SearchIcon className="search_icon"></SearchIcon>
+            <input
+              type="text"
+              className="search_data_fb"
+              placeholder="Search by name or case number"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="FbIndv_Data">
+            {filteredData.map((user, i) => {
+              return (
+                <div
+                  key={i}
+                  className="fbIndv_data_div"
+                  onClick={() => {
+                    navigate("/InstaData", {
+                      state: { case_no: user.case_no, name: user.name },
+                    });
+                  }}
+                >
+                  <img src={folderImg} className="folderImg" alt="folder" />
+                  <h6>{user.case_no}</h6>
+                  <h5>{truncateName(user.name)}</h5>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      )}
-      {loading === false ? (
-        <div className="container"></div>
       ) : (
-        <div className="FbIndv_Data">
-          {filteredData.map((user, i) => {
-            return (
-              <div
-                key={i}
-                className="fbIndv_data_div"
-                onClick={() => {
-                  navigate("/InstaData", {
-                    state: { case_no: user.case_no, name: user.name },
-                  });
-                }}
-              >
-                <img src={folderImg} className="folderImg" alt="folder" />
-                <h6>{user.case_no}</h6>
-                <h5>{truncateName(user.name)}</h5>
-              </div>
-            );
-          })}
+          <div className="loadingInstadata">
+            <h2>Loading...</h2>
+          <div className="container"></div>
         </div>
       )}
     </div>

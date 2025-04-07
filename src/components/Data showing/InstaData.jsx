@@ -30,12 +30,16 @@ const receivedData = location.state || {
   
   const fetchData = async (retries = 3) => {
     try {
-      console.log(receivedData)
-      console.log("sending request to the server")
+      console.log(receivedData);
+      console.log("sending request to the server");
       const response = await axios.post(
         `https://social-insights-backend.onrender.com/InstaIndividual`,
         { case_no: receivedData.case_no || 1244321 }
       );
+      // const response = await axios.post(
+      //   `http://localhost:8080/InstaIndividual`,
+      //   { case_no: receivedData.case_no || 1244321 }
+      // );
       setData(response.data);
       console.log(response.data);
     } catch (error) {
@@ -125,7 +129,7 @@ const receivedData = location.state || {
           <div className="content_posts">
             <div className="down_btns">
               {loading ? (
-                <p></p>
+                <div className="container"></div>
               ) : (
                 <button
                   className="download_all_btn all_download"
@@ -165,7 +169,7 @@ const receivedData = location.state || {
                   </div>
                 ))
               ) : (
-                <div></div>
+                <div className="container"></div>
               )}
             </div>
           </div>
