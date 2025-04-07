@@ -29,12 +29,12 @@ export const InstaForm = () => {
   const [progress, setProgress] = useState("");
 
   useEffect(() => {
-    // const socket = new WebSocket(
-    //   "wss://social-insights-backend.onrender.com"
-    // );
     const socket = new WebSocket(
-      "ws://localhost:8080/"
+      "wss://social-insights-backend.onrender.com"
     );
+    // const socket = new WebSocket(
+    //   "ws://localhost:8080/"
+    // );
     socket.onopen = () => console.log("WebSocket Connected");
     socket.onmessage = (event) => {
       const data1 = JSON.parse(event.data);
